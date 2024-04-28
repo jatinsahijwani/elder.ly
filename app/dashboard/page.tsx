@@ -1,34 +1,38 @@
 "use client";
 import { ResponsiveLine } from "@nivo/line";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 
 
 export default function Component() {
-  return (
-   
-    
+  let callApi = async() => {
+    const response = await fetch("http://");
+  }
+  useEffect(()=> {
+    setInterval(callApi,200);
+  },[])
+  return ( 
     <div className="flex flex-col min-h-screen">
       <header className="bg-gray-900 text-white py-4 px-4">
-        <h1 className="text-2xl font-bold">Senior Health Care Giving Dashboard</h1>
+        <h1 className="text-2xl font-bold">Smart Health Monitoring Dashboard</h1>
       </header>
       <main className="flex-1 p-6 space-y-2">
         <section>
           <div className="grid grid-cols-4 gap-4">
+            <div className="bg-red-600 rounded-lg shadow p-4">
+              <h3 className="text-l font-bold mb-2 text-green-600">Band Status</h3>
+              <p className="text-4xl font-bold text-white">Off-Wrist</p>
+            </div>
             <div className="bg-[#fca510] rounded-lg shadow p-4">
-              <h3 className="text-xl font-bold mb-2 text-red-600">Heart Rate</h3>
+              <h3 className="text-l font-bold mb-2 text-red-600">Heart Rate</h3>
               <p className="text-4xl font-bold text-white">72 BPM</p>
             </div>
             <div className="bg-[#fca510]  rounded-lg shadow p-4">
-              <h3 className="text-xl font-bold text-red-600 mb-2">Blood Pressure</h3>
+              <h3 className="text-l font-bold text-red-600 mb-2">Blood Pressure</h3>
               <p className="text-4xl font-bold text-white">120/80 mmHg</p>
             </div>
             <div className="bg-[#fca510]  rounded-lg shadow p-4">
-              <h3 className="text-xl font-bold mb-2 text-red-600">Temperature</h3>
-              <p className="text-4xl font-bold text-white">98.6 °F</p>
-            </div>
-            <div className="bg-[#fca510]  rounded-lg shadow p-4">
-              <h3 className="text-xl font-bold mb-2 text-red-600">Blood Oxygen</h3>
-              <p className="text-4xl font-bold text-white">98%</p>
+              <h3 className="text-l font-bold mb-2 text-red-600">Blood Oxygen</h3>
+              <p className="text-4xl font-bold text-white">99%</p>
             </div>
           </div>
         </section>
