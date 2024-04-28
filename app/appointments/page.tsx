@@ -29,16 +29,16 @@ export default function Page()
         console.log("Form submitted");
       };
   return(
-    <div >
+    <div>
     <HeroHighlight>
      <div> 
-     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-gray-950 border border-white">
       
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">Issue</Label>
-            <Input id="firstname" placeholder="issue" type="text" />
+            <Input id="firstname" placeholder="Issue" type="text" />
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="lastname">Date</Label>
