@@ -8,6 +8,7 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
+import Image from "next/image";
 
 export function BentoGridSecondDemo() {
   return (
@@ -42,31 +43,35 @@ const Skeleton = () => (
 );
 const items = [
   {
-    title: "IOT devides",
+    title: "Smart Glasses",
     description: "Explore the birth of groundbreaking ideas and inventions.",
-    header: <Skeleton />,
+    header: 
+    <div className="rounded-3xl flex justify-center overflow-hidden"><Image src='/Smart Glasses.png' width={650} height={150} alt="smartglass"/></div>,
     className: "md:col-span-2",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "tele Medicine",
+    title:"Smart Monitoring",
     description: "Dive into the transformative power of technology.",
-    header: <Skeleton />,
+    header: <div className="rounded-3xl flex justify-center overflow-hidden"><Image src='/smartband.png' width={300} height={150} alt="smartband"/></div>,
+    
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Scial Engagement platform",
     description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton />,
+    header: <div className="rounded-3xl flex justify-center overflow-hidden"><Image src='/care.jpg' width={300} height={150} alt="smartband"/></div>,
+    
     className: "md:col-span-1",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Power of Communication",
+    title: "Care NET",
     description:
-      "Understand the impact of effective communication in our lives.",
-    header: <Skeleton />,
+      "Seamless integration of Medical History, appointment and TeleMedicine ",
+    header:<div className="rounded-3xl flex justify-center overflow-hidden"><Image src='/carenet.jpg' width={650} height={150} alt="smartband"/></div>,
+    
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
