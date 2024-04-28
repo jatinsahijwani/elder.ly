@@ -31,7 +31,8 @@ export default function Page()
   return(
     <div>
     <HeroHighlight>
-     <div> 
+     <div className="grid col-span-2 grid-cols-2"> 
+     <section>
      <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-gray-950 border border-white">
       
       <form className="my-8" onSubmit={handleSubmit}>
@@ -58,10 +59,25 @@ export default function Page()
          
       
       </form>
+
+      </div>
+      
+    <div onClick={()=>{
+      window.location.href="/videocall"
+    }} className="videocall flex justify-center items-center text-4xl font-bold border w-[29vw] h-[40vh] rounded-2xl m-[2vw] relative shadow-input bg-white dark:bg-gray-950  border-white ">
+          <p>VideoCall with Doctor</p>
     </div>
+    
+    </section>
+    <section>
+    <div> 
+      <div className="border w-[29vw] h-[80vh] rounded-2xl ml-[2vw] relative shadow-input bg-white dark:bg-gray-950  border-white "></div>
+    </div></section>
      </div>
+     
     </HeroHighlight>
     </div>
+    
   )
 }
 
