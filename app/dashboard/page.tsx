@@ -1,11 +1,17 @@
 "use client";
 import { ResponsiveLine } from "@nivo/line";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect,useState } from "react";
 
 
 export default function Component() {
+  const [wrist,setWrist] = useState(false);
   let callApi = async() => {
-    const response = await fetch("http://");
+    const response = await fetch("http://192.168.137.220/band",{
+      method: "GET"
+    });
+    const data = await response.json();
+    if(data.sensorData == 4095) setWrist(true);
+    else setWrist(false);
   }
   useEffect(()=> {
     setInterval(callApi,200);
@@ -18,9 +24,9 @@ export default function Component() {
       <main className="flex-1 p-6 space-y-2">
         <section>
           <div className="grid grid-cols-4 gap-4">
-            <div className="bg-red-600 rounded-lg shadow p-4">
-              <h3 className="text-l font-bold mb-2 text-green-600">Band Status</h3>
-              <p className="text-4xl font-bold text-white">Off-Wrist</p>
+            <div className={`${wrist ? 'bg-green-600' : 'bg-red-600'} rounded-lg shadow p-4`}>
+              <h3 className={`text-l font-bold mb-2 ${wrist ? 'text-red-600': 'text-green-600'}`}>Band Status</h3>
+              <p className="text-4xl font-bold text-white">{wrist ? 'On-Wrist ✅' : 'Off-Wrist ❌'}</p>
             </div>
             <div className="bg-[#fca510] rounded-lg shadow p-4">
               <h3 className="text-l font-bold mb-2 text-red-600">Heart Rate</h3>
