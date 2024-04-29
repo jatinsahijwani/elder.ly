@@ -1,9 +1,11 @@
 "use client";
 import { ResponsiveLine } from "@nivo/line";
 import { ReactNode, useEffect,useState } from "react";
+import { useRouter } from "next/navigation";
 
 
 export default function Component() {
+  const router = useRouter();
   const [wrist,setWrist] = useState(false);
   let callApi = async() => {
     const response = await fetch("http://192.168.137.220/band",{
@@ -103,8 +105,8 @@ export default function Component() {
                   <p className="text-black">May 1, 10:30 AM</p>
                 </div>
                 <div>
-                  <button className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-green-700">
-                    Set Reminder
+                  <button onClick={()=> {router.push('/videocall')}} className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+                    Join Now
                   </button>
                 </div>
               </li>
