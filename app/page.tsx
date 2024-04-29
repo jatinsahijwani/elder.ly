@@ -12,7 +12,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-export function BentoGridSecondDemo() {
+ function BentoGridSecondDemo() {
   return (
     <div className="h-[100vh] w-[100vw] flex justify-center items-center ">
     <BentoGrid className="max-w-9xl scale-110 mx-auto md:auto-rows-[20rem] ">
