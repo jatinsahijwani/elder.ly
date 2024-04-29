@@ -27,21 +27,28 @@ export default function Component() {
         <section>
           <div className="grid grid-cols-4 gap-4">
             <div className={`${wrist ? 'bg-green-600' : 'bg-red-600'} rounded-lg shadow p-4`}>
-              <h3 className={`text-l font-bold mb-2 ${wrist ? 'text-red-600': 'text-green-600'}`}>Band Status</h3>
+              <h3 className={`text-l font-bold mb-2 ${wrist ? 'text-red-600': 'text-white'}`}>Band Status</h3>
               <p className="text-4xl font-bold text-white">{wrist ? 'On-Wrist ✅' : 'Off-Wrist ❌'}</p>
             </div>
             <div className="bg-[#fca510] rounded-lg shadow p-4">
-              <h3 className="text-l font-bold mb-2 text-red-600">Heart Rate</h3>
+              <h3 className="text-l font-bold mb-2 text-white">Heart Rate</h3>
               <p className="text-4xl font-bold text-white">72 BPM</p>
             </div>
             <div className="bg-[#fca510]  rounded-lg shadow p-4">
-              <h3 className="text-l font-bold text-red-600 mb-2">Blood Pressure</h3>
+              <h3 className="text-l font-bold text-white mb-2">Blood Pressure</h3>
               <p className="text-4xl font-bold text-white">120/80 mmHg</p>
             </div>
             <div className="bg-[#fca510]  rounded-lg shadow p-4">
-              <h3 className="text-l font-bold mb-2 text-red-600">Blood Oxygen</h3>
+              <h3 className="text-l font-bold mb-2 text-wh">Blood Oxygen</h3>
               <p className="text-4xl font-bold text-white">99%</p>
             </div>
+          </div>
+        </section>
+        <section>
+          <h2 className="text-xl font-bold mb-4 text-white">Activity Tracker</h2>
+          <div className="bg-white rounded-lg shadow p-4">
+            <h3 className="text-lg font-bold mb-2 text-red-600">Daily Activity</h3>
+            <LineChart className="aspect-[8/2]" />
           </div>
         </section>
         <section>
@@ -76,13 +83,7 @@ export default function Component() {
             </ul>
           </div>
         </section>
-        <section>
-          <h2 className="text-xl font-bold mb-4 text-white">Activity Tracker</h2>
-          <div className="bg-white rounded-lg shadow p-4">
-            <h3 className="text-lg font-bold mb-2 text-red-600">Daily Activity</h3>
-            <LineChart className="aspect-[16/2]" />
-          </div>
-        </section>
+        
         <section>
           <h2 className="text-xl font-bold mb-4">Appointment Calendar</h2>
           <div className="bg-white rounded-lg shadow p-4">
