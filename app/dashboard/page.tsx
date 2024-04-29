@@ -7,16 +7,26 @@ import { useRouter } from "next/navigation";
 export default function Component() {
   const router = useRouter();
   const [wrist,setWrist] = useState(false);
+  const [bpm,setBpm] = useState(71);
   let callApi = async() => {
+    
+  }
+  const callApis = async() => {
     const response = await fetch("http://192.168.137.220/band",{
       method: "GET"
     });
     const data = await response.json();
     if(data.sensorData == 4095) setWrist(true);
     else setWrist(false);
+
+    const response2 = await fetch("http://localhost:4500/",{
+      method: "GET"
+    });
+    const data2 = await response2.json();
+    setBpm(data2.bpm);
   }
   useEffect(()=> {
-    setInterval(callApi,200);
+    setInterval(callApis,200);
   },[])
   return ( 
     <div className="flex flex-col min-h-screen">
@@ -32,7 +42,7 @@ export default function Component() {
             </div>
             <div className="bg-[#fca510] rounded-lg shadow p-4">
               <h3 className="text-l font-bold mb-2 text-white">Heart Rate</h3>
-              <p className="text-4xl font-bold text-white">72 BPM</p>
+              {wrist ? <p className="text-4xl font-bold text-white">{bpm} BPM</p> : <p className="text-4xl font-bold text-white">- BPM</p>} 
             </div>
             <div className="bg-[#fca510]  rounded-lg shadow p-4">
               <h3 className="text-l font-bold text-white mb-2">Blood Pressure</h3>
