@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/utils/cn";
 import React from "react";
+import Image from "next/image";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
 import {
@@ -64,14 +65,20 @@ export default function Page()
       
     <div onClick={()=>{
       window.location.href="/videocall"
-    }} className="videocall flex justify-center items-center text-4xl font-bold border w-[29vw] h-[40vh] rounded-2xl m-[2vw] relative shadow-input bg-white dark:bg-gray-950  border-white ">
+    }} className=" videocall flex flex-col justify-center items-center text-4xl font-bold border w-[29vw] h-[40vh] rounded-2xl m-[2vw] relative shadow-input bg-white dark:bg-gray-950  border-white ">
+
           <p>VideoCall with Doctor</p>
+          <Image src='/vc.jpg' className="" width={250} height={120} alt="smartband"/>
+
     </div>
     
     </section>
     <section>
     <div> 
-      <div className="border w-[29vw] h-[80vh] rounded-2xl ml-[2vw] relative shadow-input bg-white dark:bg-gray-950  border-white "></div>
+      <div className="text-center flex flex-col justify-center items-center text-3xl font-bold border w-[29vw] h-[80vh] rounded-2xl ml-[2vw] relative shadow-input bg-white dark:bg-gray-950  border-white ">
+     <p>Medical History With E-kyc and BlockChain Protection</p>
+     </div>
+    
     </div></section>
      </div>
      
